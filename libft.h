@@ -6,11 +6,14 @@
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 21:06:39 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/05/20 21:12:26 by jfranchi         ###   ########.fr       */
+/*   Updated: 2021/05/21 17:06:38 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-# define LIBFT_H
+#define LIBFT_H
 
-#endif /* LIB
+#include <stdio.h>
+#include <stdlib.h>
+
+#endif
