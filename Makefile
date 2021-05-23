@@ -6,7 +6,7 @@
 #    By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/19 21:23:40 by jfranchi          #+#    #+#              #
-#    Updated: 2021/05/21 19:21:42 by jfranchi         ###   ########.fr        #
+#    Updated: 2021/05/22 22:36:43 by jfranchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,19 +16,26 @@
 #																				#
  ###############################################################################
 
-#Bin
-NAME = libft.a
+#Future directories
+APPS = .
+BIN = .
+INCLUDE = .
+LIB = .
+OBJ = .
+SRC = .
+
+#Library
+NAME = ${LIB}/libft.a
 
 #Compilation
-CC = cgg
+CC = gcc
 FLAGS = -Wall -Werror -Wextra
-HEADER = libft.h
 
-#Sources
-SCR = *.c
+#Files .c
+SRCS = $(wildcard *.c)
 
-#Transform .c into .o
-OBJ = $(SCR: %.c=%.o)
+#Generate files .o
+OBJS = $(SRCS:.c=.o)
 
  ###############################################################################
 #																				#
@@ -36,31 +43,24 @@ OBJ = $(SCR: %.c=%.o)
 #																				#
  ###############################################################################
 
-#Target:	Dependencies
-#	Action
+all: ${NAME}
 
-all:	${NAME}
+$(NAME): $(OBJS)
+	@ar -rcs $@ ${OBJ}/$<
+	@echo "Library has been created successfully!"
 
-${NAME}:	$(OBJ) ${HEADER}
-	@ar rc $@ $<
-	@echo "${NAME} has been created successfully!"
-	@runlib $(NAME)
-	@echo "${NAME} has been indexed successfully!"
-
-
-%.o:	%.c
-	${CC} -c ${FLAGS} $< -o $@
+${OBJ}/%.o: ${SRC}/%.c
+	@${CC} -c ${FLAGS} $< -I ${INCLUDE} -o $@
+	@echo "Objects has been created successfully"
 
 clean:
-	@rm -f ${OBJ}
+	@rm -f ${OBJ}/*.o
 	@echo "Objects has been deleted"
 
 fclean:	clean
 	@rm -f ${NAME}
-	@echo "${NAME} has been deleted"
+	@echo "Library has been deleted"
 
 re:	fclean	all
-	@echo "All objects and ${NAME} have been deleted"
-	@echo "Everything has been created again"
 
 .PHONY:	all, clean, fclear, re
