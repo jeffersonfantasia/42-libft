@@ -6,7 +6,7 @@
 #    By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/19 21:23:40 by jfranchi          #+#    #+#              #
-#    Updated: 2021/05/22 22:39:54 by jfranchi         ###   ########.fr        #
+#    Updated: 2021/05/23 22:38:37 by jfranchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,14 +35,14 @@ OBJS = $(SRCS:.c=.o)
 #																				#
  ###############################################################################
 
-all: ${NAME}
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar -rcs $@ $<
 	@echo "Library has been created successfully!"
 
 %.o: %.c
-	@${CC} -c ${FLAGS} $< -o $@
+	@$(CC) -c $(FLAGS) $< -o $@
 	@echo "Objects has been created successfully"
 
 clean:
@@ -50,7 +50,7 @@ clean:
 	@echo "Objects has been deleted"
 
 fclean:	clean
-	@rm -f ${NAME}
+	@rm -f $(NAME)
 	@echo "Library has been deleted"
 
 re:	fclean	all
