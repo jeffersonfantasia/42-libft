@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 21:06:39 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/05/25 20:20:11 by jfranchi         ###   ########.fr       */
+/*   Created: 2021/05/24 17:43:20 by jfranchi          #+#    #+#             */
+/*   Updated: 2021/05/25 19:31:55 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-int	ft_tolower(int c);
-int	ft_toupper(int c);
-
-#endif
+int	ft_toupper(int c)
+{
+	if (c >= 'a' && c <= 'z')
+		c = c - 32;
+	return (c);
+}
