@@ -6,7 +6,7 @@
 #    By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/19 21:23:40 by jfranchi          #+#    #+#              #
-#    Updated: 2021/05/31 15:18:37 by jfranchi         ###   ########.fr        #
+#    Updated: 2021/05/31 16:42:34 by jfranchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,9 @@ SRCS =	ft_toupper.c \
 	ft_isascii.c \
 	ft_isalnum.c \
 	ft_isdigit.c \
-	ft_isalpha.c
+	ft_isalpha.c \
+	ft_memset.c \
+	ft_bzero.c
 
 #Generate files .o for "all" rule
 OBJS = $(SRCS:.c=.o)
