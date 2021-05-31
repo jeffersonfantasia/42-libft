@@ -6,7 +6,7 @@
 #    By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/19 21:23:40 by jfranchi          #+#    #+#              #
-#    Updated: 2021/05/31 16:42:34 by jfranchi         ###   ########.fr        #
+#    Updated: 2021/05/31 20:40:53 by jfranchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,4 +60,7 @@ fclean:	clean
 
 re:	fclean	all
 
-.PHONY:	all, clean, fclear, re
+norme:
+	source ~/venv/bin/activate
+
+.PHONY:	all, clean, fclear, re, norme

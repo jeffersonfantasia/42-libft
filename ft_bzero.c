@@ -6,7 +6,7 @@
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 16:23:47 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/05/31 20:05:58 by jfranchi         ###   ########.fr       */
+/*   Updated: 2021/05/31 20:42:37 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_bzero(void *b, size_t len)
 {
-	unsigned char *str;
-	size_t i;
+	unsigned char	*str;
+	size_t			i;
 
 	str = b;
 	i = 0;

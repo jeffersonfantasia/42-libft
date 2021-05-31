@@ -6,17 +6,17 @@
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 21:06:39 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/05/31 20:03:11 by jfranchi         ###   ########.fr       */
+/*   Updated: 2021/05/31 20:45:21 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
+# define LIBFT_H
 
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
-#include <stdlib.h>
+# include <stdio.h>
+# include <string.h>
+# include <ctype.h>
+# include <stdlib.h>
 
 int		ft_tolower(int c);
 int		ft_toupper(int c);
