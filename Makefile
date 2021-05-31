@@ -6,7 +6,7 @@
 #    By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/19 21:23:40 by jfranchi          #+#    #+#              #
-#    Updated: 2021/05/27 21:59:27 by jfranchi         ###   ########.fr        #
+#    Updated: 2021/05/31 15:18:37 by jfranchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,10 @@ FLAGS = -Wall -Werror -Wextra
 SRCS =	ft_toupper.c \
 	ft_tolower.c \
 	ft_isprint.c \
-	ft_isascii.c
+	ft_isascii.c \
+	ft_isalnum.c \
+	ft_isdigit.c \
+	ft_isalpha.c
 
 #Generate files .o for "all" rule
 OBJS = $(SRCS:.c=.o)
