@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/02 17:39:29 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/06/03 13:01:13 by jfranchi         ###   ########.fr       */
+/*   Created: 2021/06/03 12:12:54 by jfranchi          #+#    #+#             */
+/*   Updated: 2021/06/03 12:38:19 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t num, size_t len)
+int	ft_strncmp(const char *str1, const char *str2, size_t len)
 {
-	void	*p_src;
+	size_t	n;
 
-	p_src = (void *) malloc(num * len);
-	if (p_src == NULL)
-		return (NULL);
-	ft_bzero(p_src, (num * len));
-	return (p_src);
+	if (!str1 && !str2)
+		return (0);
+	n = 0;
+	while (len--)
+	{
+		if (str1[n] != str2[n])
+			return ((unsigned char)str1[n] - (unsigned char)str2[n]);
+		n++;
+	}
+	return (0);
 }
