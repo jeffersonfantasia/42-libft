@@ -6,7 +6,7 @@
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 16:54:57 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/06/04 17:55:17 by jfranchi         ###   ########.fr       */
+/*   Updated: 2021/06/04 20:57:36 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	int	len;
 
-	if (s1 == NULL || set == NULL)
+	if (s1 == NULL && set == NULL)
 		return (NULL);
 	while (*s1 && ft_strchr(set, *s1))
 	{
