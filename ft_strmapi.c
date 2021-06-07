@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 14:53:57 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/06/05 17:05:40 by jfranchi         ###   ########.fr       */
+/*   Created: 2021/06/07 17:36:49 by jfranchi          #+#    #+#             */
+/*   Updated: 2021/06/07 17:41:43 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*str;
 	unsigned int	i;
-	size_t			s_len;
 
 	if (!s)
 		return (NULL);
-	str = (char *)ft_calloc((len + 1), sizeof(char));
+	str = ft_calloc((ft_strlen(s) + 1), sizeof(char));
 	if (str == NULL)
-		return (NULL);
-	s_len = ft_strlen(s);
-	if (start >= s_len)
-		s = (s + s_len);
-	else
-		s = (s + start);
+		return (0);
 	i = 0;
-	while (len-- && *(s + i))
-	{
-		*(str + i) = *(s + i);
-		i++;
-	}
-	return (str);
+	while (*s)
+		*str++ = f(i++, *s++);
+	return (str - i);
 }

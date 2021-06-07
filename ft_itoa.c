@@ -6,18 +6,20 @@
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 19:17:45 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/06/04 20:34:13 by jfranchi         ###   ########.fr       */
+/*   Updated: 2021/06/07 17:32:59 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	_count_int(int n)
+static	int	_count_int(long n, int sign)
 {
 	int	i;
 
-	i = 0;
-	while (n != 0)
+	i = 1;
+	if (sign == -1)
+		i++;
+	while (n >= 10)
 	{
 		n /= 10;
 		i++;
@@ -25,38 +27,37 @@ static	int	_count_int(int n)
 	return (i);
 }
 
-static	void	_convert_to_char(char *str, int n, int len, int sign)
+static	void	_convert_to_char(char *str, long n, int len, int sign)
 {
-	str[len] = '\0';
-	while (len--)
+	while (len > 0)
 	{
-		str[len] = ((n % 10) + '0');
+		if (len == 1 && sign == -1)
+			str[0] = '-';
+		else
+			str[len - 1] = ((n % 10) + '0');
 		n /= 10;
+		len--;
 	}
-	if (sign == -1)
-		str[0] = '-';
 }
 
 char	*ft_itoa(int n)
 {
+	long	number;
 	int		len;
 	int		sign;
 	char	*str;
 
-	if (n == -2147483648)
-		return ("-2147483648");
 	sign = 1;
-	if (n < 0)
+	number = n;
+	if (number < 0)
 	{
 		sign = -1;
-		n *= -1;
-		len = _count_int(n) + 1;
+		number = sign * number;
 	}
-	else
-		len = _count_int(n);
-	str = (char *)malloc((len + 1) * sizeof(char));
+	len = _count_int(number, sign);
+	str = (char *)ft_calloc((len + 1), sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	_convert_to_char(str, n, len, sign);
+	_convert_to_char(str, number, len, sign);
 	return (str);
 }
