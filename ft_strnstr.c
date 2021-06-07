@@ -6,7 +6,7 @@
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 15:14:42 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/06/03 15:36:52 by jfranchi         ###   ########.fr       */
+/*   Updated: 2021/06/07 18:29:39 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,18 @@
 
 char	*ft_strnstr(const char *str, const char *find, size_t len)
 {
-	size_t	i;
-	size_t	j;
+	size_t	len_find;
 
-	if (!ft_strlen(find))
+	if (!*find)
 		return ((char *)str);
-	i = 0;
-	while (i < (len - 1) && *(str + i) != '\0')
+	if (!*str)
+		return (NULL);
+	len_find = ft_strlen(find);
+	while (len-- >= len_find && *str)
 	{
-		j = 0;
-		while ((i + j) < len && *(str + i + j) == *(find + j))
-		{
-			if (*(find + j + 1) == '\0')
-				return ((char *)(str + i));
-			j++;
-		}
-		i++;
+		if (*str == *find && ft_strncmp(str, find, len_find) == 0)
+			return ((char *)str);
+		str++;
 	}
 	return (NULL);
 }

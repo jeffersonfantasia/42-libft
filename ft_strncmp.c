@@ -6,7 +6,7 @@
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 12:12:54 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/06/04 20:51:08 by jfranchi         ###   ########.fr       */
+/*   Updated: 2021/06/07 18:34:54 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	ft_strncmp(const char *str1, const char *str2, size_t len)
 	{
 		if (str1[n] != str2[n])
 			return ((unsigned char)str1[n] - (unsigned char)str2[n]);
+		if (!str1[n] && !str2[n])
+			return (0);
 		n++;
 	}
 	return (0);
