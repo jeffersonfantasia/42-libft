@@ -6,7 +6,7 @@
 #    By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/19 21:23:40 by jfranchi          #+#    #+#              #
-#    Updated: 2021/06/07 18:50:43 by jfranchi         ###   ########.fr        #
+#    Updated: 2021/06/08 15:43:45 by jfranchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SRCS =	ft_toupper.c ft_tolower.c ft_isprint.c ft_isascii.c \
 	ft_strrchr.c ft_strnstr.c ft_atoi.c ft_strdup.c \
 	ft_substr.c ft_strjoin.c ft_strtrim.c ft_itoa.c \
 	ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
-	ft_putnbr_fd.c
+	ft_putnbr_fd.c ft_split.c
 
 SRCS_BONUS =
 
@@ -56,8 +56,8 @@ $(NAME): $(OBJS)
 %.o: %.c
 	$(CC) -c $(FLAGS) $< -o $@
 
-bonus:	$(NAME) $(OBJS_BONUS)
-		@ar -rcs $@ ./*.o
+#bonus:	$(NAME) $(OBJS_BONUS)
+#		@ar -rcs $@ ./*.o
 
 clean:
 	@rm -vf *.o
