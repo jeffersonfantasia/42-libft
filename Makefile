@@ -6,7 +6,7 @@
 #    By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/19 21:23:40 by jfranchi          #+#    #+#              #
-#    Updated: 2021/06/09 18:11:33 by jfranchi         ###   ########.fr        #
+#    Updated: 2021/06/09 20:47:55 by jfranchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ SRCS =	ft_toupper.c ft_tolower.c ft_isprint.c ft_isascii.c \
 SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 
 
+
 #Generate files .o for "all" rule
 OBJS = $(SRCS:.c=.o)
 
@@ -67,11 +68,8 @@ clean:
 
 fclean:	clean
 	@rm -vf $(NAME)
-	@rm -vf libft.so
+	@rm -vf bonus
 
 re:	fclean	all
-
-so:
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 .PHONY:	all, clean, fclear, re, so
