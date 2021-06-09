@@ -6,7 +6,7 @@
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 21:06:39 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/06/08 13:37:54 by jfranchi         ###   ########.fr       */
+/*   Updated: 2021/06/09 18:11:22 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int		ft_isalpha(int c);
 int		ft_memcmp(const void *p_dest, const void *p_src, size_t len);
 int		ft_strncmp(const char *str1, const char *str2, size_t len);
 int		ft_atoi(const char *str);
+int		ft_lstsize(t_list *lst);
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *p_dest, const char *p_src, size_t len);
 size_t	ft_strlcat(char *p_dest, const char *p_src, size_t len);
@@ -56,5 +57,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+t_list	*ft_lstnew(void *content);
+t_list	*ft_lstlast(t_list *lst);
 
 #endif
