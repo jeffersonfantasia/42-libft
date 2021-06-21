@@ -6,7 +6,7 @@
 #    By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/19 21:23:40 by jfranchi          #+#    #+#              #
-#    Updated: 2021/06/21 17:50:34 by jfranchi         ###   ########.fr        #
+#    Updated: 2021/06/21 19:24:05 by jfranchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,4 +73,4 @@ fclean:	clean
 
 re:	fclean	all
 
-.PHONY:	all, clean, fclear, re, so
+.PHONY:	all, clean, fclear, bonus, re
