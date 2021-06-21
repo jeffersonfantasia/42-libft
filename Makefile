@@ -6,7 +6,7 @@
 #    By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/19 21:23:40 by jfranchi          #+#    #+#              #
-#    Updated: 2021/06/21 19:24:05 by jfranchi         ###   ########.fr        #
+#    Updated: 2021/06/21 19:48:57 by jfranchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ SRCS =	ft_toupper.c ft_tolower.c ft_isprint.c ft_isascii.c \
 
 #List all the bonus files with .c
 SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c $(SRCS)
 
 
 
@@ -55,14 +55,15 @@ OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar -rcs $@ ./*.o
+	ar -rcs $@ ./*.o
 	@echo "$(NAME) has been created successfully!"
 
 %.o: %.c
 	$(CC) -c $(FLAGS) $< -o $@
 
 bonus:	$(OBJS_BONUS) $(NAME)
-		@ar -rcs $@ ./*.o
+		ar -rcs $(NAME) ./*.o
+		@echo "$(NAME) has been updated successfully!"
 
 clean:
 	@rm -vf *.o
