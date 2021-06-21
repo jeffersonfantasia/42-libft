@@ -6,7 +6,7 @@
 #    By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/19 21:23:40 by jfranchi          #+#    #+#              #
-#    Updated: 2021/06/18 16:56:19 by jfranchi         ###   ########.fr        #
+#    Updated: 2021/06/21 17:50:34 by jfranchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ $(NAME): $(OBJS)
 %.o: %.c
 	$(CC) -c $(FLAGS) $< -o $@
 
-bonus:	$(NAME) $(OBJS_BONUS)
+bonus:	$(OBJS_BONUS) $(NAME)
 		@ar -rcs $@ ./*.o
 
 clean:
