@@ -6,7 +6,7 @@
 #    By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/19 21:23:40 by jfranchi          #+#    #+#              #
-#    Updated: 2021/06/21 21:36:28 by jfranchi         ###   ########.fr        #
+#    Updated: 2021/06/21 21:37:26 by jfranchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,8 +62,8 @@ $(NAME): $(OBJS)
 	$(CC) -c $(FLAGS) $< -o $@
 
 bonus:	$(NAME) $(OBJS_BONUS)
-		@ar -rcs $< ./*.o
-		@echo "$(NAME) has been updated successfully!"
+	@ar -rcs $< ./*.o
+	@echo "$(NAME) has been updated successfully!"
 
 clean:
 	@rm -vf *.o
