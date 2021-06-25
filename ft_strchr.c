@@ -6,7 +6,7 @@
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 14:35:36 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/06/25 14:26:54 by jfranchi         ###   ########.fr       */
+/*   Updated: 2021/06/25 14:27:53 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strchr(const char *str, int c)
 	{
 		if (*str == (char)c)
 			return ((char *)str);
-		*str++;
+		str++;
 	}
 	return (NULL);
 }
