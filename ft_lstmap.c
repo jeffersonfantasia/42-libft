@@ -6,7 +6,7 @@
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 16:55:05 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/06/18 17:08:07 by jfranchi         ###   ########.fr       */
+/*   Updated: 2021/06/25 14:37:18 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (lst == NULL)
 		return (NULL);
-	new_list = NULL;
 	while (lst != NULL)
 	{
 		new_element = ft_lstnew(f(lst->content));
