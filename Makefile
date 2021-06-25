@@ -6,13 +6,13 @@
 #    By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/19 21:23:40 by jfranchi          #+#    #+#              #
-#    Updated: 2021/06/21 21:37:26 by jfranchi         ###   ########.fr        #
+#    Updated: 2021/06/25 13:14:18 by jfranchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
  ###############################################################################
 #																				#
-#								CREATE VARIABLE									#
+#								CREATE VARIABLES								#
 #																				#
  ###############################################################################
 
@@ -37,8 +37,6 @@ SRCS =	ft_toupper.c ft_tolower.c ft_isprint.c ft_isascii.c \
 #List all the bonus files with .c
 SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
-
-
 
 #Generate files .o for "all" rule
 OBJS = $(SRCS:.c=.o)
