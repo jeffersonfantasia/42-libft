@@ -6,7 +6,7 @@
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 13:37:14 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/06/08 18:20:50 by jfranchi         ###   ########.fr       */
+/*   Updated: 2021/06/25 14:48:00 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ char	**ft_split(char const *s, char c)
 {
 	char	**splited;
 
+	if (!s)
+		return (NULL);
 	splited = _split_words((char *)s, c);
 	if (splited == NULL)
 		return (NULL);
