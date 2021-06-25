@@ -6,7 +6,7 @@
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 18:07:33 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/06/07 18:07:37 by jfranchi         ###   ########.fr       */
+/*   Updated: 2021/06/25 14:43:40 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	ft_putstr_fd(s, fd);
-	write(fd, "\n", 1);
+	if (s)
+	{
+		ft_putstr_fd(s, fd);
+		write(fd, "\n", 1);
+	}
 }
