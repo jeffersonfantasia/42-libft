@@ -6,7 +6,7 @@
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 14:35:36 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/06/03 14:50:01 by jfranchi         ###   ########.fr       */
+/*   Updated: 2021/06/25 14:17:52 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	if (!str)
-		return (NULL);
-	while (*str != (char)c)
+	unsigned int	i;
+
+	while (str[i] != (char)c)
 	{
-		if (*str == '\0')
+		if (str[i] == '\0')
 			return (NULL);
-		str++;
+		i++;
 	}
 	return ((char *)str);
 }
