@@ -6,7 +6,7 @@
 /*   By: jfranchi <jfranchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 13:37:14 by jfranchi          #+#    #+#             */
-/*   Updated: 2021/06/25 14:48:00 by jfranchi         ###   ########.fr       */
+/*   Updated: 2021/06/26 20:17:54 by jfranchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static	char	**_split_words(char *str, char c)
 	return (split_words);
 }
 
-static	void	_free_all(char **split)
+static	void	_free_all(char **split)	
 {
 	size_t	pos;
 
